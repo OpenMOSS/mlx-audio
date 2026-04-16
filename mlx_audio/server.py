@@ -24,7 +24,6 @@ import mlx.core as mx
 import numpy as np
 import uvicorn
 import webrtcvad
-from mlx_audio.audio_io import sf_read, sf_write
 from fastapi import (
     FastAPI,
     File,
@@ -41,9 +40,9 @@ from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
 from mlx_audio.audio_io import read as audio_read
+from mlx_audio.audio_io import sf_read, sf_write
 from mlx_audio.audio_io import write as audio_write
 from mlx_audio.utils import load_model
-
 
 SpeechConversation = List[Dict[str, Any]]
 
